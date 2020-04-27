@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  price: 9.99
-  description: MyText
-  category: MyString
+  title: Gallon of Milk
+  price: 4.99
+  description: This is a gallon of Milk
+  category: grocery
 
 two:
-  title: MyString
-  price: 9.99
-  description: MyText
-  category: MyString
+  title: Command Hooks
+  price: 6.99
+  description: These are used to hang decorations
+  category: utilities
