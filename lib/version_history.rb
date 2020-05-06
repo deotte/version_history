@@ -4,6 +4,7 @@ module VersionHistory
     new_version = Hash.new
 
     persisted_object.previous_changes.each do |key, changes|
+      next if key == ("updated_at" || "created_at")
       new_version[key] = changes.last
     end
 
