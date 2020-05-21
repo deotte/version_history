@@ -1,10 +1,11 @@
 module VersionHistory
   def send_changes_to_version_history(persisted_object)
     version_history_class = "#{persisted_object.class.name.downcase}_versions"
+    blacklisted_attributes = persisted_object.class.const_get('NON_VERSIONED_ATTRIBUTES')
     new_version = Hash.new
 
     persisted_object.previous_changes.each do |key, changes|
-      next if key == ("updated_at" || "created_at")
+      next if key == ("updated_at" || "created_at") || blacklisted_attributes.include?(key)
       new_version[key] = changes.last
     end
 
